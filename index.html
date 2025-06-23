@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+      type="image/png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-theme="light">
+    <div class="container">
+      <div class="theme-toggle">
+        <button id="theme-toggle"><i class="ri-sun-line"></i></button>
+      </div>
+      <h1><i class="ri-wallet-line"></i> Expense Tracker</h1>
+
+      <form id="expense-form">
+        <input type="text" id="title" placeholder="Expense Title" required />
+        <input
+          type="number"
+          id="amount"
+          placeholder="Amount (₹)"
+          required
+          min="0.01"
+          step="0.01"
+        />
+        <input type="date" id="date" required />
+        <select id="category">
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Other">Other</option>
+        </select>
+        <button type="submit">Add Expense</button>
+      </form>
+
+      <div class="filters">
+        <select id="filter-category">
+          <option value="All">All</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Other">Other</option>
+        </select>
+        <select id="sort-order">
+          <option value="latest">Latest</option>
+          <option value="oldest">Oldest</option>
+        </select>
+      </div>
+
+      <ul id="expense-list"></ul>
+
+      <footer>Total Spent: ₹<span id="total">0</span></footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
